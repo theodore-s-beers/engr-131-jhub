@@ -16,25 +16,25 @@ hub:
     JupyterHub:
       authenticator_class: "oauthenticator.globus.GlobusOAuthenticator"
     GlobusOAuthenticator:
-      oauth_callback_url: https://engr-131-jhub.t6e.dev/hub/oauth_callback
+      oauth_callback_url: https://engr-131-jhub.eastus.cloudapp.azure.com/hub/oauth_callback
       client_id: f3feeb6c-5463-4cf6-b0c9-2c41a05a80af
       client_secret: Je9DudqhnQj82yUznz8ENzuM2CpAq6N5C6+7QnEMIsg=
 
 proxy:
-  # service:
-  #   annotations:
-  #     service.beta.kubernetes.io/azure-dns-label-name: engr-131-jhub
+  service:
+    annotations:
+      service.beta.kubernetes.io/azure-dns-label-name: engr-131-jhub
   https:
     enabled: true
-    hosts: ["engr-131-jhub.t6e.dev"]
+    hosts: ["engr-131-jhub.eastus.cloudapp.azure.com"]
     letsencrypt:
       contactEmail: theo.beers@drexel.edu
 
 ingress:
   enabled: true
-  hosts: ["engr-131-jhub.t6e.dev"]
+  hosts: ["engr-131-jhub.eastus.cloudapp.azure.com"]
   tls:
-    - hosts: ["engr-131-jhub.t6e.dev"]
+    - hosts: ["engr-131-jhub.eastus.cloudapp.azure.com"]
 # singleuser:
 #   defaultUrl: "/lab"
 #   profileList:
