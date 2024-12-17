@@ -35,13 +35,8 @@ ingress:
   hosts: ["engr-131-jhub.eastus.cloudapp.azure.com"]
   tls:
     - hosts: ["engr-131-jhub.eastus.cloudapp.azure.com"]
-# singleuser:
-#   defaultUrl: "/lab"
-#   profileList:
-#     - display_name: ENGR131
-#       kubespawner_override:
-#         image_spec: jagar2/engr_131_jupyter_hub:1.0.6
 
-# prePuller:
-#   hook:
-#     enabled: true
+singleuser:
+  image:
+    name: katomyomachia/engr-131-jhub
+    tag: latest
