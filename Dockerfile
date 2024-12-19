@@ -20,6 +20,9 @@ RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r /tmp/requirements.txt \
     && rm /tmp/requirements.txt
 
+# Invalidate cache for following steps
+ARG CACHE_BUSTER=latest
+
 # Install PyKubeGrader (frequently updated)
 RUN pip install --no-cache-dir --upgrade pykubegrader
 

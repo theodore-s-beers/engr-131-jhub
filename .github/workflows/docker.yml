@@ -23,6 +23,7 @@ jobs:
       - name: Build and Push Multi-Platform Docker Image
         run: |
           docker buildx build \
+            --build-arg CACHE_BUSTER=$(date +%s) \
             --platform linux/amd64,linux/arm64 \
             --ulimit nofile=2048:2048 \
             --tag katomyomachia/engr-131-jhub:latest \
