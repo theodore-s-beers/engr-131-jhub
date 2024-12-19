@@ -20,6 +20,9 @@ RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r /tmp/requirements.txt \
     && rm /tmp/requirements.txt
 
+# Install PyKubeGrader (frequently updated)
+RUN pip install --no-cache-dir --upgrade pykubegrader
+
 # Set permissions for default JupyterHub user
 RUN fix-permissions /home/jovyan
 
