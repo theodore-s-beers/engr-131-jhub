@@ -40,3 +40,15 @@ singleuser:
   image:
     name: katomyomachia/engr-131-jhub
     tag: latest
+  networkPolicy:
+    egress:
+      - ports:
+          - port: 8080
+            protocol: TCP
+        to:
+          - namespaceSelector:
+              matchLabels:
+                name: fastapi
+            podSelector:
+              matchLabels:
+                app: fastapi-app
