@@ -12,6 +12,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     curl \
     portaudio19-dev \
+    iputils-ping \
+    netcat \
+    dnsutils \
+    iproute2 \
+    traceroute \
+    tcpdump \
+    net-tools \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Python libraries
