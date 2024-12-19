@@ -1,0 +1,14 @@
+name: Update Helm Chart
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: self-hosted
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run script to update Helm chart
+        run: ./deploy.sh
