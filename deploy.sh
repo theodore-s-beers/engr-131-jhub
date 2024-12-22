@@ -2,7 +2,9 @@
 
 set -Eeuo pipefail
 
-source .env
+if [[ -f .env ]]; then
+	source .env
+fi
 
 envsubst <config.yml >config_rendered.yml
 
