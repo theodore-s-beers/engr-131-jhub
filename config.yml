@@ -17,8 +17,8 @@ hub:
       authenticator_class: "oauthenticator.globus.GlobusOAuthenticator"
     GlobusOAuthenticator:
       oauth_callback_url: https://engr-131-jhub.eastus.cloudapp.azure.com/hub/oauth_callback
-      client_id: f3feeb6c-5463-4cf6-b0c9-2c41a05a80af
-      client_secret: Je9DudqhnQj82yUznz8ENzuM2CpAq6N5C6+7QnEMIsg=
+      client_id: ${CLIENT_ID}
+      client_secret: ${CLIENT_SECRET}
 
 proxy:
   service:
