@@ -20,6 +20,9 @@ RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r /tmp/requirements.txt \
     && rm /tmp/requirements.txt
 
+# Copy key files into home directory
+COPY .client_private_key.bin .server_public_key.bin /home/jovyan/
+
 # Invalidate cache for following steps
 ARG CACHE_BUSTER=latest
 
