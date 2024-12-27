@@ -20,11 +20,9 @@ RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r /tmp/requirements.txt \
     && rm /tmp/requirements.txt
 
-# Copy key files and script
+# Copy key files
 COPY .client_private_key.bin .server_public_key.bin /opt/dotfiles/
 RUN chmod -R a+r /opt/dotfiles
-COPY populate_keys.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/populate_keys.sh
 
 # Invalidate cache for following steps
 ARG CACHE_BUSTER=latest
@@ -42,4 +40,4 @@ USER ${NB_UID}
 EXPOSE 8888
 
 # Start single-user notebook server
-CMD ["bash", "-c", "/usr/local/bin/populate_keys.sh && start-notebook.sh --NotebookApp.token=''"]
+CMD ["start-notebook.sh", "--NotebookApp.token=''"]
