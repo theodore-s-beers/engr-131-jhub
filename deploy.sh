@@ -20,7 +20,7 @@ envsubst <config_exams.yml >config_exams_rendered.yml
 
 helm upgrade --cleanup-on-fail \
 	--install engr-131-jhub jupyterhub/jupyterhub \
-	--namespace jhub \
+	--namespace jhub-exams \
 	--create-namespace \
 	--version=3.3.8 \
 	--timeout=10m \
