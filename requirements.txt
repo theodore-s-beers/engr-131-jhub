@@ -1,18 +1,11 @@
+ipywidgets     # Why is this here?
 matplotlib
+nbgitpuller
 numpy
 otter-grader
-pandas
-
-sympy
-
-scipy
-
-scikit-image
-
-scikit-learn
-
-ipywidgets
-
-nbgitpuller
-
 panel
+pandas
+scikit-image
+scikit-learn
+scipy
+sympy
