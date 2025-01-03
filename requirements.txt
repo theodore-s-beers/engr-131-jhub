@@ -2,3 +2,17 @@ matplotlib
 numpy
 otter-grader
 pandas
+
+sympy
+
+scipy
+
+scikit-image
+
+scikit-learn
+
+ipywidgets
+
+nbgitpuller
+
+panel
