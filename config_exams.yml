@@ -23,7 +23,7 @@ hub:
 proxy:
   service:
     annotations:
-      service.beta.kubernetes.io/azure-dns-label-name: engr-131-jhub
+      service.beta.kubernetes.io/azure-dns-label-name: engr-131-jhub-exams
   https:
     enabled: true
     hosts: ["engr-131-jhub-exams.eastus.cloudapp.azure.com"]
