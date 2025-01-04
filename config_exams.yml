@@ -17,8 +17,16 @@ hub:
       authenticator_class: "oauthenticator.globus.GlobusOAuthenticator"
     GlobusOAuthenticator:
       oauth_callback_url: https://engr-131-jhub-exams.eastus.cloudapp.azure.com/hub/oauth_callback
-      client_id: ${CLIENT_ID_EXAMS}
-      client_secret: ${CLIENT_SECRET_EXAMS}
+      client_id:
+        valueFrom:
+          secretKeyRef:
+            name: exams-secrets
+            key: CLIENT_ID_EXAMS
+      client_secret:
+        valueFrom:
+          secretKeyRef:
+            name: exams-secrets
+            key: CLIENT_SECRET_EXAMS
 
 proxy:
   service:
