@@ -38,7 +38,7 @@ ingress:
 
 singleuser:
   image:
-    name: katomyomachia/engr-131-jhub
+    name: katomyomachia/engr-131-jhub-exams
     tag: latest
   networkPolicy:
     egressAllowRules:

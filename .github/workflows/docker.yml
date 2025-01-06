@@ -1,4 +1,4 @@
-name: Build & Push Docker Image
+name: Build & Push Docker Images
 
 on:
   push:
@@ -10,7 +10,8 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out Repository
+        uses: actions/checkout@v4
 
       - name: Log in to Docker Hub
         run: |
@@ -20,11 +21,21 @@ jobs:
       - name: Set up Buildx
         run: docker buildx inspect --bootstrap || docker buildx create --use
 
-      - name: Build and Push Multi-Platform Docker Image
+      - name: Build and Push Primary Docker Image
         run: |
           docker buildx build \
             --build-arg CACHE_BUSTER=$(date +%s) \
             --platform linux/amd64,linux/arm64 \
             --ulimit nofile=2048:2048 \
             --tag katomyomachia/engr-131-jhub:latest \
+            -f Dockerfile \
+            --push .
+
+      - name: Build and Push Exams Docker Image
+        run: |
+          docker buildx build \
+            --platform linux/amd64,linux/arm64 \
+            --ulimit nofile=2048:2048 \
+            --tag katomyomachia/engr-131-jhub-exams:latest \
+            -f exams.Dockerfile \
             --push .
