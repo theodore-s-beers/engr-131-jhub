@@ -47,3 +47,7 @@ singleuser:
   networkPolicy:
     egressAllowRules:
       privateIPs: true
+  extraEnv:
+    user_name_student: "student"
+    keys_student: "capture"
+    DB_URL: "https://engr-131-api.eastus.cloudapp.azure.com/"
