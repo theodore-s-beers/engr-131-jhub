@@ -1,4 +1,5 @@
 ipywidgets     # Why is this here?
+jupyterlab-rise
 matplotlib
 nbgitpuller
 numpy
@@ -9,4 +10,3 @@ scikit-image
 scikit-learn
 scipy
 sympy
-pykubegrader
