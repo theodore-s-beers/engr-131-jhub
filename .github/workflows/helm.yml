@@ -11,7 +11,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Run script to update Helm chart
+      - name: Run script to update Helm charts
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
