@@ -40,6 +40,10 @@ singleuser:
   image:
     name: katomyomachia/engr-131-jhub-exams
     tag: latest
+  lifecycleHooks:
+    postStart:
+      exec:
+        command: ["cp", "-R", "/opt/notebooks/.", "/home/jovyan"]
   networkPolicy:
     egressAllowRules:
       privateIPs: true

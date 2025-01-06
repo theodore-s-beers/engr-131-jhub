@@ -6,10 +6,9 @@ LABEL maintainer="Theo Beers <theo.beers@drexel.edu>"
 # Switch to root to copy files and set permissions
 USER root
 
-# Copy any notebooks into default user's home directory
-COPY notebooks/ /home/jovyan/
-
-RUN fix-permissions /home/jovyan
+# Copy any notebooks into /opt/notebooks and set permissions
+COPY notebooks/ /opt/notebooks/
+RUN chown -R jovyan:users /opt/notebooks && chmod -R 755 /opt/notebooks
 
 # Switch back to default JupyterHub user
 USER ${NB_UID}
