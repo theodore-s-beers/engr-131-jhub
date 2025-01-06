@@ -1,4 +1,4 @@
-ipywidgets     # Why is this here?
+ipywidgets       # Why is this here?
 jupyterlab-rise
 matplotlib
 nbgitpuller
