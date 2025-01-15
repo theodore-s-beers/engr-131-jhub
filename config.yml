@@ -20,6 +20,12 @@ hub:
       client_id: ${CLIENT_ID}
       client_secret: ${CLIENT_SECRET}
 
+ingress:
+  enabled: true
+  hosts: ["engr-131-jhub.eastus.cloudapp.azure.com"]
+  tls:
+    - hosts: ["engr-131-jhub.eastus.cloudapp.azure.com"]
+
 proxy:
   service:
     annotations:
@@ -37,12 +43,6 @@ scheduling:
         operator: "Equal"
         value: "spot"
         effect: "NoSchedule"
-
-ingress:
-  enabled: true
-  hosts: ["engr-131-jhub.eastus.cloudapp.azure.com"]
-  tls:
-    - hosts: ["engr-131-jhub.eastus.cloudapp.azure.com"]
 
 singleuser:
   image:
