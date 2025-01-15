@@ -30,6 +30,14 @@ proxy:
     letsencrypt:
       contactEmail: theo.beers@drexel.edu
 
+scheduling:
+  userPods:
+    tolerations:
+      - key: "kubernetes.azure.com/scalesetpriority"
+        operator: "Equal"
+        value: "spot"
+        effect: "NoSchedule"
+
 ingress:
   enabled: true
   hosts: ["engr-131-jhub-exams.eastus.cloudapp.azure.com"]
