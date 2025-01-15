@@ -2,7 +2,7 @@
 name = "engr-131-jhub"
 version = "0.1.0"
 requires-python = ">= 3.12"
-dependencies = ["ruff>=0.9.1"]
+dependencies = ["mypy>=1.14.1", "ruff>=0.9.1"]
 
 [tool.ruff.lint]
 ignore = ["E402", "F821"]
