@@ -10,11 +10,11 @@
 
 hub:
   config:
+    JupyterHub:
+      authenticator_class: "oauthenticator.globus.GlobusOAuthenticator"
     Authenticator:
       allow_all: true
       admin_users: ["jca92", "tb3367"]
-    JupyterHub:
-      authenticator_class: "oauthenticator.globus.GlobusOAuthenticator"
     GlobusOAuthenticator:
       oauth_callback_url: https://engr-131-jhub-exams.eastus.cloudapp.azure.com/hub/oauth_callback
       client_id: ${CLIENT_ID_EXAMS}
@@ -48,13 +48,13 @@ singleuser:
   image:
     name: katomyomachia/engr-131-jhub-exams
     tag: latest
+  networkPolicy:
+    egressAllowRules:
+      privateIPs: true
   lifecycleHooks:
     postStart:
       exec:
         command: ["cp", "-R", "/opt/notebooks/.", "/home/jovyan"]
-  networkPolicy:
-    egressAllowRules:
-      privateIPs: true
   extraEnv:
     user_name_student: "student"
     keys_student: "capture"

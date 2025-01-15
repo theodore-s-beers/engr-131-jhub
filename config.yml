@@ -10,11 +10,11 @@
 
 hub:
   config:
+    JupyterHub:
+      authenticator_class: "oauthenticator.globus.GlobusOAuthenticator"
     Authenticator:
       allow_all: true
       admin_users: ["jca92", "tb3367"]
-    JupyterHub:
-      authenticator_class: "oauthenticator.globus.GlobusOAuthenticator"
     GlobusOAuthenticator:
       oauth_callback_url: https://engr-131-jhub.eastus.cloudapp.azure.com/hub/oauth_callback
       client_id: ${CLIENT_ID}
