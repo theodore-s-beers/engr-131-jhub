@@ -51,10 +51,10 @@ singleuser:
   networkPolicy:
     egressAllowRules:
       privateIPs: true
-  lifecycleHooks:
-    postStart:
-      exec:
-        command: ["/usr/local/bin/log_jhub_user.sh", "$JUPYTERHUB_USER"]
+  # lifecycleHooks:
+  #   postStart:
+  #     exec:
+  #       command: ["/usr/local/bin/log_jhub_user.sh", "$JUPYTERHUB_USER"]
   extraEnv:
     user_name_student: "student"
     keys_student: "capture"
