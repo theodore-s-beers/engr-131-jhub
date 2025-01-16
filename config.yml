@@ -56,7 +56,11 @@ singleuser:
     postStart:
       exec:
         command:
-          ["sudo", "/usr/local/bin/log_jhub_user_arm64", "$JUPYTERHUB_USER"]
+          - /bin/bash
+          - -c
+          - |
+            JHUB_USER=$(hostname | sed 's/^jupyter-//') &&
+            sudo /usr/local/bin/log_jhub_user_arm64 "$JHUB_USER"
   extraEnv:
     user_name_student: "student"
     keys_student: "capture"
