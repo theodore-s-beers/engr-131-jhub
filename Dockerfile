@@ -30,7 +30,7 @@ RUN touch /var/log/jhub_user.log \
 
 # Copy logging script into container
 COPY log_jhub_user.sh /usr/local/bin/log_jhub_user.sh
-RUN chmod 755 /usr/local/bin/log_jhub_user.sh
+RUN chmod 4755 /usr/local/bin/log_jhub_user.sh
 
 # Invalidate cache for following steps
 ARG CACHE_BUSTER=latest
