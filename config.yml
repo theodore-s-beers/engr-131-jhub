@@ -51,6 +51,7 @@ singleuser:
   networkPolicy:
     egressAllowRules:
       privateIPs: true
+  allowPrivilegeEscalation: true
   # lifecycleHooks:
   #   postStart:
   #     exec:
