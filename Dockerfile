@@ -7,12 +7,7 @@ USER root
 
 # Install system-level dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    git \
-    build-essential \
-    wget \
-    curl \
-    portaudio19-dev \
-    sudo \
+    build-essential curl git portaudio19-dev sudo wget \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Python libraries
