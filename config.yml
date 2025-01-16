@@ -52,10 +52,11 @@ singleuser:
     egressAllowRules:
       privateIPs: true
   allowPrivilegeEscalation: true
-  # lifecycleHooks:
-  #   postStart:
-  #     exec:
-  #       command: ["/usr/local/bin/log_jhub_user.sh", "$JUPYTERHUB_USER"]
+  lifecycleHooks:
+    postStart:
+      exec:
+        command:
+          ["sudo", "/usr/local/bin/log_jhub_user_arm64", "$JUPYTERHUB_USER"]
   extraEnv:
     user_name_student: "student"
     keys_student: "capture"
