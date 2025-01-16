@@ -22,7 +22,7 @@ RUN chmod -R a+r /opt/dotfiles
 
 # Create JHub username log file, set permissions
 RUN touch /var/log/jhub_user.log \
-    && chmod 640 /var/log/jhub_user.log
+    && chmod 644 /var/log/jhub_user.log
 
 # Copy logging script into container
 COPY log_jhub_user_arm64 /usr/local/bin/log_jhub_user_arm64
