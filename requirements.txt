@@ -3,6 +3,7 @@ jupyterlab-rise
 matplotlib
 nbgitpuller
 numpy
+opencv-python
 otter-grader
 panel
 pandas
@@ -10,7 +11,6 @@ rise
 scikit-image
 scikit-learn
 scipy
-sympy
-opencv-python
-statsmodels
 seaborn
+statsmodels
+sympy
