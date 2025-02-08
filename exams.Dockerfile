@@ -6,6 +6,8 @@ LABEL maintainer="Theo Beers <theo.beers@drexel.edu>"
 # Switch to root to copy files and set permissions
 USER root
 
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+
 # Copy any notebooks into /opt/notebooks and set permissions
 COPY notebooks/ /opt/notebooks/
 RUN chown -R jovyan:users /opt/notebooks && chmod -R 755 /opt/notebooks
