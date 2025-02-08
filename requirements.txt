@@ -15,3 +15,5 @@ seaborn
 statsmodels
 sympy
 opencv-python-headless
+
+torchvision
