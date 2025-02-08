@@ -14,3 +14,5 @@ scipy
 seaborn
 statsmodels
 sympy
+
+opencv-python
