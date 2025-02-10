@@ -46,7 +46,7 @@ scheduling:
 
 singleuser:
   image:
-    name: katomyomachia/engr-131-jhub-midterm
+    name: katomyomachia/engr-131-jhub
     tag: latest
   networkPolicy:
     egressAllowRules:
