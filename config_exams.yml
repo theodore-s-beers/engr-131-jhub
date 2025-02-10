@@ -16,23 +16,23 @@ hub:
       allow_all: true
       admin_users: ["dak329", "jca92", "tb3367"]
     GlobusOAuthenticator:
-      oauth_callback_url: https://engr-131-jhub-exams.eastus.cloudapp.azure.com/hub/oauth_callback
+      oauth_callback_url: https://engr-131-jhub-midterm.eastus.cloudapp.azure.com/hub/oauth_callback
       client_id: ${CLIENT_ID_EXAMS}
       client_secret: ${CLIENT_SECRET_EXAMS}
 
 ingress:
   enabled: true
-  hosts: ["engr-131-jhub-exams.eastus.cloudapp.azure.com"]
+  hosts: ["engr-131-jhub-midterm.eastus.cloudapp.azure.com"]
   tls:
-    - hosts: ["engr-131-jhub-exams.eastus.cloudapp.azure.com"]
+    - hosts: ["engr-131-jhub-midterm.eastus.cloudapp.azure.com"]
 
 proxy:
   service:
     annotations:
-      service.beta.kubernetes.io/azure-dns-label-name: engr-131-jhub-exams
+      service.beta.kubernetes.io/azure-dns-label-name: engr-131-jhub-midterm
   https:
     enabled: true
-    hosts: ["engr-131-jhub-exams.eastus.cloudapp.azure.com"]
+    hosts: ["engr-131-jhub-midterm.eastus.cloudapp.azure.com"]
     letsencrypt:
       contactEmail: theo.beers@drexel.edu
 
@@ -46,7 +46,7 @@ scheduling:
 
 singleuser:
   image:
-    name: katomyomachia/engr-131-jhub-exams
+    name: katomyomachia/engr-131-jhub-midterm
     tag: latest
   networkPolicy:
     egressAllowRules:
