@@ -17,3 +17,5 @@ sympy
 opencv-python-headless
 
 torchvision
+
+ydata-profiling
