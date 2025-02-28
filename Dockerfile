@@ -26,7 +26,7 @@ RUN chmod -R a+r /opt/dotfiles
 ARG CACHE_BUSTER=latest
 
 # Install PyKubeGrader (frequently updated)
-RUN pip install --no-cache-dir --upgrade pykubegrader
+RUN pip install --no-cache-dir --upgrade git+https://github.com/m3-learning/PyKubeGrader.git@main
 
 # Set permissions for default JupyterHub user
 RUN fix-permissions /home/jovyan
