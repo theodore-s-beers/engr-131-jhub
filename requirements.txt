@@ -1,9 +1,9 @@
-ipywidgets       # Why is this here?
+ipywidgets              # Why is this here?
 jupyterlab-rise
 matplotlib
 nbgitpuller
 numpy
-opencv-python
+opencv-python-headless
 otter-grader
 panel
 pandas
@@ -14,10 +14,6 @@ scipy
 seaborn
 statsmodels
 sympy
-opencv-python-headless
-
-torchvision
-
-ydata-profiling
-
 tensorflow
+torchvision
+ydata-profiling
