@@ -4,5 +4,5 @@ version = "0.1.0"
 requires-python = ">= 3.12"
 dependencies = ["mypy>=1.15.0", "pyright>=1.1.396", "ruff>=0.9.7"]
 
-[tool.ruff.lint]
-ignore = ["E402", "F821"]
+[tool.ruff]
+exclude = ["*.ipynb"]
