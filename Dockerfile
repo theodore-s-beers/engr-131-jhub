@@ -7,10 +7,8 @@ USER root
 
 # Install system-level dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential curl git portaudio19-dev wget \
+    build-essential curl ffmpeg git libsm6 libxext6 portaudio19-dev wget \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
 # Install Python libraries
 COPY requirements.txt /tmp/requirements.txt
@@ -19,8 +17,13 @@ RUN pip install --no-cache-dir --upgrade pip \
     && rm /tmp/requirements.txt
 
 # Copy key files
-COPY .client_private_key.bin .server_public_key.bin /opt/dotfiles/
-RUN chmod -R a+r /opt/dotfiles
+# COPY .client_private_key.bin .server_public_key.bin /opt/dotfiles/
+# Use dummy keys for the time being
+RUN mkdir -p /opt/dotfiles \
+    && echo "FAKE CLIENT KEY" > /opt/dotfiles/.client_private_key.bin \
+    && echo "FAKE SERVER KEY" > /opt/dotfiles/.server_public_key.bin \
+    && chmod -R a+r /opt/dotfiles
+# RUN chmod -R a+r /opt/dotfiles
 
 # Invalidate cache for following steps
 ARG CACHE_BUSTER=latest
